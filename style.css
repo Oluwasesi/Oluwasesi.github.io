@@ -70,14 +70,15 @@ header {
   content: "";
   display: block;
   height: 3px;
-  width: 100%;
-  background: #0ef;
-  margin-right: auto;
-  transition: 0.55s;
+  width: 0;
+  background-color: #0ef;
+  transition: 0.55s ease;
 }
+
 .navigation li:hover::after {
   width: 100%;
 }
+
 .navigation a {
   text-decoration: none;
   font-size: 18px;
@@ -128,12 +129,16 @@ span {
   font-size: 5rem;
   font-weight: 700;
   margin-bottom: 3rem;
+  opacity: 0;
+  animation: slideRight 3s ease forwards;
 }
 .text-section p {
   font-size: 18px;
   padding: 2px;
   line-height: 1.5rem;
   font-family: Roboto;
+  opacity: 0;
+  animation: slideRight 5s ease forwards;
 }
 .contact-me {
   text-decoration: none;
@@ -149,6 +154,8 @@ span {
   display: inline-block;
   transition: 0.4s ease;
   font-family: "Fraunces", serif;
+  opacity: 0;
+  animation: slideRight 5s ease forwards;
 }
 .contact-me:hover {
   background: rgb(59, 174, 209);
@@ -169,11 +176,15 @@ span {
   display: block;
   margin: 0 auto;
   margin-left: 20rem;
+  opacity: 0;
+  animation: slideRight 3s ease forwards;
 }
 .social-icons img {
   width: 50px;
   height: auto;
   margin-right: 20px;
+  opacity: 0;
+  animation: slideRight 5s ease forwards;
 }
 .social-icons a {
   display: inline-flex;
@@ -198,6 +209,28 @@ span {
 footer {
   text-align: center;
   margin-top: 30px;
+  opacity: 0;
+  animation: slideUp 3s ease forwards;
+}
+/* @keyframes slideRight {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+} */
+@keyframes slideUp {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 @keyframes slideRight {
   0% {
@@ -209,14 +242,25 @@ footer {
     opacity: 1;
   }
 }
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 .heading {
   font-size: 2rem;
   font-size: 5rem;
   margin-bottom: 5rem;
   text-align: center;
   font-family: "Roboto";
-  /* font-family: serif; */
-  /* font-family: "Playfair Display"; */
+  opacity: 0;
+  animation: slideUp 2s ease forwards;
 }
 .heading span {
   color: #0ef;
@@ -236,18 +280,23 @@ footer {
 .about-content {
   width: 50%;
   padding-right: 2rem;
+  opacity: 0;
+  animation: slideLeft 3s ease forwards;
 }
 .about-image {
   width: 30%;
+  opacity: 0;
+  animation: slideRight 3s ease forwards;
 }
 .about-image img {
   max-width: 100%;
   width: 80%;
   max-height: 70vh;
   height: 50%;
-  border-radius: 50%;
+  border-radius: 64px 96px 128px 32px;
+  border: 2px solid #0ef;
+  overflow: hidden;
   display: block;
-  /* margin: 0 auto; */
   float: left;
   margin-right: 20px;
 }
@@ -293,6 +342,8 @@ footer {
   font-weight: 700;
   margin-bottom: 1rem;
   font-family: Roboto;
+  opacity: 0;
+  animation: slideUp 2s ease forwards;
 }
 .resume p {
   font-size: 18px;
@@ -300,6 +351,8 @@ footer {
   padding: 2px;
   line-height: 1.5;
   font-family: Roboto;
+  opacity: 0;
+  animation: slideUp 4s ease forwards;
 }
 .resume h6 {
   font-size: 20px;
@@ -308,10 +361,14 @@ footer {
   padding: 2px;
   margin-bottom: 0;
   font-weight: bolder;
+  opacity: 0;
+  animation: slideUp 3s ease forwards;
 }
 .resume-wrapper {
   display: flex;
   flex-wrap: wrap;
+  opacity: 0;
+  animation: slideUp 2s ease forwards;
 }
 .resume-wrapper div {
   flex: 0 0 calc(50% - 20px);
@@ -347,6 +404,12 @@ footer {
   padding-bottom: 7rem;
   font-family: Roboto;
   padding: 20px;
+  opacity: 0;
+  animation: slideUp 3s ease forwards;
+}
+.btn{
+  opacity: 0;
+  animation: slideUp 3s ease forwards;
 }
 .heading span {
   color: #0ef;
@@ -470,6 +533,25 @@ footer {
   background: transparent;
   border-radius: 0.6rem;
   border: 0.2rem solid #0ef;
+}
+.input-field:nth-child(odd) input[type="text"] {
+  animation: slideRight 3s ease forwards;
+}
+
+.input-field:nth-child(even) input[type="text"] {
+  animation: slideLeft 3s ease forwards;
+}
+
+.input-field:nth-child(odd) input[type="number"] {
+  animation: slideRight 3s ease forwards;
+}
+
+.input-field:nth-child(even) input[type="text"]#email_suject {
+  animation: slideLeft 3s ease forwards;
+}
+
+.textarea-field textarea {
+  animation: slideUp 3s ease forwards;
 }
 
 .name-err,
@@ -621,6 +703,7 @@ footer {
     align-items: right;
     margin-right: 2rem;
     margin-bottom: 10px;
+    animation: slideRight 1s ease backwards;
   }
 
   .navigation.active .navigation {
@@ -648,6 +731,8 @@ footer {
     display: block;
     font-size: 4rem;
     right: 0%;
+    opacity: 0;
+    animation: slideRight 2s ease forwards;
   }
   .text-section {
     max-width: 50%;
@@ -687,6 +772,7 @@ footer {
     width: 30px;
     height: auto;
   }
+
   .about-wrapper {
     flex-direction: column;
   }
@@ -695,6 +781,7 @@ footer {
     max-width: 300px;
     height: auto;
     margin-left: 4rem;
+    animation: slideUp 3s ease forwards;
   }
   .about-content {
     margin-top: 20px;
@@ -702,6 +789,10 @@ footer {
     text-align: center;
     width: 100%;
     margin-top: 3rem;
+    animation: slideUp 4s ease forwards;
+  }
+  .btn {
+    animation: slideUp 4s ease forwards;
   }
   .resume-wrapper {
     flex-direction: column;
@@ -716,14 +807,16 @@ footer {
   .skills h2 {
     margin-top: 2rem;
   }
-  .additional-content{
+  .additional-content {
     text-align: left;
   }
 }
 @media (max-width: 576px) {
+
   #menu-icon {
     font-size: 3.5rem;
     margin-left: 25rem;
+    order: 2;
   }
   .container {
     display: flex;
@@ -961,33 +1054,32 @@ footer {
   }
 }
 @media (max-width: 375px) {
-  header{
+  header {
     padding: 10px;
     justify-content: flex-start;
   }
-  .logo{
+  .logo {
     font-size: 1.2rem;
     right: 1rem;
-
   }
-  #menu-icon{
+  #menu-icon {
     font-size: 2.5rem;
   }
   .container {
     display: flex;
     flex-direction: column;
   }
-.header{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.text-section{
-  max-width: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .text-section {
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
   .text-section p,
   .about-content p,
   .resume p {
@@ -1013,12 +1105,12 @@ footer {
     width: 99%;
     margin: 0 auto;
   }
-  .resume h3{
+  .resume h3 {
     font-size: 18px;
   }
- .additional-content{
-  text-align: left;
- }
+  .additional-content {
+    text-align: left;
+  }
 }
 @media (max-width: 320px) {
   .header .social-icons img {

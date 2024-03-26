@@ -41,17 +41,60 @@ window.onscroll = () => {
 
 
 
-// function SendMail() {
-//   var params = {
-//     from_name : document.getElementById("fullName").value,
-//     phone_number : document.getElementById("phone_number").value,
-//     email_id : document.getElementById("email_id").value,
-//     message : document.getElementById("message").value
-//   }
-//   emailjs.send("service_bwaxsqx", "template_y1fgyf2", params).then(function (res) {
-//     alert("Success! " + res.status);
-//   }) 
-// }
+
+
+// Initialize EmailJS with your user ID and service ID
+emailjs.init("kwuW_Id8K0QOYuoJi");
+
+// Function to send email using EmailJS
+function SendMail() {
+    // Prevent default form submission
+    event.preventDefault();
+
+    // Fetch form data
+    const fullName = document.getElementById("fullName").value;
+    const email = document.getElementById("email_id").value;
+    const phoneNumber = document.getElementById("phone_number").value;
+    const subject = document.getElementById("email_subject").value;
+    const message = document.querySelector(".textarea-field textarea").value;
+
+    // Send email using EmailJS
+    emailjs.send("service_bwaxsqx", "template_y1fgyf2", {
+        from_name: fullName,
+        from_email: email,
+        phone_number: phoneNumber,
+        email_subject: subject,
+        message: message
+    })
+    .then(function(response) {
+        console.log('Email sent successfully:', response);
+        // Optionally, display a success message to the user
+        alert("Form submitted successfully!");
+
+        // Refresh the page after a short delay (adjust the delay as needed)
+        setTimeout(function() {
+            location.reload(); // Refresh the page
+        }, 1000); // 1000 milliseconds (1 second) delay before refreshing
+
+        // Scroll to the top of the page after the page is refreshed
+        window.scrollTo(0, 0);
+    }, function(error) {
+        console.log('Error sending email:', error);
+        // Optionally, display an error message to the user
+    });
+
+    // Log the email address for testing
+    console.log("Email:", email);
+}
+
+
+
+
+
+
+
+
+
 
 // read more button
 document

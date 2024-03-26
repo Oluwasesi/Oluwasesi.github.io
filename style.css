@@ -778,7 +778,10 @@ footer {
     transition: 0.25s ease;
     transition-delay: 0s;
   }
-
+  .logo{
+    position: absolute;
+    left: -3%;
+  }
   #menu-icon {
     position: absolute;
     display: block;

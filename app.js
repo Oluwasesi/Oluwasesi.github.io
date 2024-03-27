@@ -125,7 +125,7 @@ function SendMail() {
       function (error) {
         console.log("Error sending email:", error);
         // Optionally, display an error message to the user
-        alert("Error sending email. Please try again later.");
+        alert("Error submitting form. Please try again later.");
       }
     );
 

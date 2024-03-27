@@ -76,6 +76,9 @@ document
     }
   });
 
+
+
+  
   // refresh page back to top
   window.onload = function () {
     window.scrollTo(0, 0);

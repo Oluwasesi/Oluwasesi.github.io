@@ -76,14 +76,12 @@ document
     }
   });
 
+  // refresh page back to top
+  window.onload = function () {
+    window.scrollTo(0, 0);
+}
 
-
-
-
-// Initialize EmailJS with your user ID and service ID
-emailjs.init("kwuW_Id8K0QOYuoJi");
-
-// Function to send email using EmailJS
+  // Function to send email using EmailJS
 function SendMail() {
   // Validate the form
   if (!validate()) {
@@ -91,15 +89,12 @@ function SendMail() {
     return;
   }
 
-  // Prevent default form submission
-  event.preventDefault();
-
   // Fetch form data
   const fullName = document.getElementById("fullName").value;
   const email = document.getElementById("email_id").value;
   const phoneNumber = document.getElementById("phone_number").value;
   const subject = document.getElementById("email_subject").value;
-  const message = document.querySelector(".textarea-field textarea").value;
+  const message = document.getElementById("message").value;
 
   // Send email using EmailJS
   emailjs
@@ -127,13 +122,13 @@ function SendMail() {
       function (error) {
         console.log("Error sending email:", error);
         // Optionally, display an error message to the user
+        alert("Error sending email. Please try again later.");
       }
     );
 
   // Log the email address for testing
   console.log("Email:", email);
 }
-
 
 // Validate contact forms
 function validate() {
@@ -142,7 +137,6 @@ function validate() {
   const phone = document.getElementById("phone_number").value;
   const email_subject = document.getElementById("email_subject").value;
   const message = document.getElementById("message").value;
-
 
   const name_err = document.querySelector(".name-err");
   const email_err = document.querySelector(".email-err");
@@ -164,12 +158,12 @@ function validate() {
     email_err.textContent = "Email field is required";
     return false;
   }
-   // Add email format validation
-   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-   if (!emailPattern.test(email)) {
-       email_err.textContent = "Please enter a valid email address";
-       return false;
-   }
+  // Add email format validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    email_err.textContent = "Please enter a valid email address";
+    return false;
+  }
   if (phone === "") {
     phone_err.textContent = "Phone field is required";
     return false;
@@ -181,20 +175,11 @@ function validate() {
   if (message.trim() === "") {
     message_err.textContent = "Message field is required";
     return false;
-}
+  }
 
   // If all fields are filled, return true to allow form submission
   return true;
 }
-
-function SendMail() {
-  // Validate the form before submitting
-  if (validate()) {
-    // Your code to send the email goes here
-    alert("Form submitted successfully!");
-  }
-}
-
 
 // copyright date
 document.addEventListener("DOMContentLoaded", function () {

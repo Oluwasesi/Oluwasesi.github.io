@@ -39,7 +39,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#resume">Resume</a></li>
                     <li><a href="#skills">Skills</a></li>
-                    <li><a href="#project">Project</a></li>
+                    <li><a href="#projects">Projects</a></li>
                 </ul>
 
             </nav>
@@ -267,47 +267,49 @@
             </div>
         </section>
     </section>
-    <section class="contact" id="contact">
-        <h2 class="heading">Contact <span>Me!</span></h2>
-        <!-- <form action="" name="myForm" onsubmit="return(validate())"> -->
-        <form action="">
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="text" id="fullName" placeholder="Full Name">
-                    <span class="focus"></span>
-                    <p class="name-err"></p>
-                </div>
-                <div class="input-field">
-                    <input type="text" id="email_id" placeholder="Email Address">
-                    <span class="focus"></span>
-                    <p class="email-err"></p>
+    <div class="contact-container">
+        <section class="contact" id="contact">
+            <h2 class="heading">Contact <span>Me!</span></h2>
+            <!-- <form action="" name="myForm" onsubmit="return(validate())"> -->
+            <form action="">
+                <div class="input-box">
+                    <div class="input-field">
+                        <input type="text" id="fullName" placeholder="Full Name">
+                        <span class="focus"></span>
+                        <p class="name-err"></p>
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="email_id" placeholder="Email Address">
+                        <span class="focus"></span>
+                        <p class="email-err"></p>
 
+                    </div>
                 </div>
-            </div>
 
-            <div class="input-box">
-                <div class="input-field">
-                    <input type="number" id="phone_number" placeholder="Phone Number">
+                <div class="input-box">
+                    <div class="input-field">
+                        <input type="number" id="phone_number" placeholder="Phone Number">
+                        <span class="focus"></span>
+                        <p class="phone-err"></p>
+
+                    </div>
+                    <div class="input-field">
+                        <input type="text" id="email_subject" placeholder="Email Subject">
+                        <span class="focus"></span>
+                        <p class="subject-err"></p>
+
+                    </div>
+                </div>
+                <div class="textarea-field">
+                    <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
                     <span class="focus"></span>
-                    <p class="phone-err"></p>
-
                 </div>
-                <div class="input-field">
-                    <input type="text" id="email_subject" placeholder="Email Subject">
-                    <span class="focus"></span>
-                    <p class="subject-err"></p>
-
+                <div class="btn-box btns">
+                    <button type="submit" class="btn" onclick="SendMail()">Send Message</button>
                 </div>
-            </div>
-            <div class="textarea-field">
-                <textarea name="" id="" cols="30" rows="10" placeholder="Your Message"></textarea>
-                <span class="focus"></span>
-            </div>
-            <div class="btn-box btns">
-                <button type="submit" class="btn" onclick="SendMail()">Send Message</button>
-            </div>
-        </form>
-    </section>
+            </form>
+        </section>
+    </div>
     <footer>
         <div class="copyright">
             <p> <i class='bx bxs-copyright'></i><span id="copyright-year"></span>

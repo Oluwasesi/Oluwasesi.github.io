@@ -19,24 +19,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // To hide the floating button on the homepage
 
-
 // To show the floating button when user scrolls to the bottom
-window.addEventListener('scroll', function() {
-  var button = document.querySelector('.floating-button');
+window.addEventListener("scroll", function () {
+  var button = document.querySelector(".floating-button");
   var windowHeight = window.innerHeight;
   var documentHeight = document.body.clientHeight;
-  var scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+  var scrollTop =
+    window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
 
   // Show the button when the user scrolls to the bottom
   if (windowHeight + scrollTop >= documentHeight) {
-    button.style.display = 'block';
+    button.style.display = "block";
   } else {
-    button.style.display = 'none';
+    button.style.display = "none";
   }
 });
-
-
-
 
 // scroll sections
 let sections = document.querySelectorAll("section");
@@ -45,7 +42,8 @@ let navLinks = document.querySelectorAll("header nav li a");
 window.onscroll = () => {
   sections.forEach((sec) => {
     let top = window.scrollY;
-    let offset = (sec.offsetTop = 100);
+    // let offset = (sec.offsetTop = 100);
+    let offset = sec.offsetTop + 100;
     let height = sec.offsetHeight;
     let id = sec.getAttribute("id");
 
@@ -59,7 +57,6 @@ window.onscroll = () => {
     }
   });
 };
-
 
 // read more button
 document
@@ -76,17 +73,16 @@ document
     }
   });
 
+// refresh page back to top
+window.onload = function () {
+  window.scrollTo(0, 0);
+};
 
-
-  
-  // refresh page back to top
-  window.onload = function () {
-    window.scrollTo(0, 0);
-}
-
-  // Function to send email using EmailJS
+// Function to send email using EmailJS
 function SendMail() {
-  // Validate the form
+  // Prevent the default form submission behavior
+  event.preventDefault();
+
   if (!validate()) {
     // If validation fails, return without sending the email
     return;
@@ -98,6 +94,38 @@ function SendMail() {
   const phoneNumber = document.getElementById("phone_number").value;
   const subject = document.getElementById("email_subject").value;
   const message = document.getElementById("message").value;
+
+   // Check if the form is empty
+   if (
+    fullName.trim() === "" &&
+    email.trim() === "" &&
+    phoneNumber.trim() === "" &&
+    subject.trim() === "" &&
+    message.trim() === ""
+  ) {
+    // Display an alert message
+    alert("Please fill in all the fields before submitting the form.");
+    return; // Stop further execution
+  }
+
+  
+   // Validate the form
+   if (!validate()) {
+    // If validation fails, focus on the first empty field and display a message
+    if (fullName.value.trim() === "") {
+      fullName.focus();
+    } else if (email.value.trim() === "") {
+      email.focus();
+    } else if (phoneNumber.value.trim() === "") {
+      phoneNumber.focus();
+    } else if (subject.value.trim() === "") {
+      subject.focus();
+    } else if (message.value.trim() === "") {
+      message.focus();
+    }
+    alert("Please fill in all the fields before submitting the form.");
+    return;
+  }
 
   // Send email using EmailJS
   emailjs

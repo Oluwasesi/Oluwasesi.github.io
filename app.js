@@ -217,3 +217,27 @@ document.addEventListener("DOMContentLoaded", function () {
   var currentYear = new Date().getFullYear();
   document.getElementById("copyright-year").textContent = currentYear;
 });
+
+
+let slideIndex = 0;
+showProject(slideIndex);
+
+function changeProject(n) {
+    showProject(slideIndex += n);
+}
+
+function showProject(n) {
+    let i;
+    const projects = document.getElementsByClassName("carousel-item");
+    if (n >= projects.length) {
+        slideIndex = 0;
+    }
+    if (n < 0) {
+        slideIndex = projects.length - 1;
+    }
+    for (i = 0; i < projects.length; i++) {
+        projects[i].style.display = "none";
+    }
+    projects[slideIndex].style.display = "block";
+    
+}

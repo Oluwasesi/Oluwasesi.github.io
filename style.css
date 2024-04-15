@@ -71,7 +71,7 @@ header {
 .navigation li::after {
   content: "";
   display: block;
-  height: 3px;
+  height: 3px;  
   width: 0;
   background-color: #0ef;
   transition: 0.55s ease;
@@ -131,7 +131,7 @@ span {
   width: 21rem;
 }
 
-.text-section h1 {
+.text-section h1{
   font-family: "Playfair Display";
   font-size: 5rem;
   font-weight: 700;
@@ -145,8 +145,6 @@ span {
   background-position: 20rem 0;
   animation: homeBgText 6s linear infinite;
   animation-delay: 2s;
-  /* opacity: 0;
-  animation: slideRight 3s ease forwards; */
 }
 .text-section h1::before {
   content: "";
@@ -548,84 +546,6 @@ footer {
 .skills-column:nth-child(2) .skills-content .progress:nth-child(5) .bar span {
   width: 80%;
 }
-/* .carousel {
-  position: relative;
-  flex: 1;
-  margin: 0 auto;
-}
-
-.projects {
- text-align: center;
-}
-.project-wrapper{
-  position: relative;
-  display: inline-block;
-  margin: 0 auto;
-  max-width: fit-content;
-  width: 50%;
-}
-.project-pic {
-  max-width: 100%;
-  display: block;
-}
-.carousel-inner { 
-  display: flex;
-}
-
-.carousel-item {
-  display: none;
-  flex: 0 0 100%;
-}
-
-.carousel-item.active,
-.carousel-item {
-  display: block;
-  justify-content: center;
-  text-align: center;
-}
-
-
-
-.carousel-caption {
-  text-align: center;
-  padding: 10px;
-}
-
-.project-title {
-  margin-bottom: 10px;
-  margin: 1.5rem 0 2rem 0;
-  font-size: 2rem;
-}
-.projects p{
-  font-size: 24px;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-  font-family: Roboto;
-  opacity: 0;
-  animation: slideUp 4s ease forwards;
-}
-
-.prev,
-.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  cursor: pointer;
-  padding: 16px;
-  background-color: whitesmoke;
-  color: #0ef;
-  font-size: 20px;
-  border: none;
-  z-index: 10;
-}
-
-.prev {
-  left: 0;
-}
-
-.next {
-  right: 0;
-} */
 .projects p{
   margin-top: 0;
   font-size: 24px;

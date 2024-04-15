@@ -17,7 +17,6 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// To hide the floating button on the homepage
 
 // To show the floating button when user scrolls to the bottom
 window.addEventListener("scroll", function () {
@@ -218,26 +217,3 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("copyright-year").textContent = currentYear;
 });
 
-
-let slideIndex = 0;
-showProject(slideIndex);
-
-function changeProject(n) {
-    showProject(slideIndex += n);
-}
-
-function showProject(n) {
-    let i;
-    const projects = document.getElementsByClassName("carousel-item");
-    if (n >= projects.length) {
-        slideIndex = 0;
-    }
-    if (n < 0) {
-        slideIndex = projects.length - 1;
-    }
-    for (i = 0; i < projects.length; i++) {
-        projects[i].style.display = "none";
-    }
-    projects[slideIndex].style.display = "block";
-    
-}
